@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Profile = () => {
+const Navbar = () => {
   return <div></div>
 }
 
-export default Profile
+export default Navbar

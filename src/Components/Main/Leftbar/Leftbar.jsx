@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Profile = () => {
+const Leftbar = () => {
   return <div></div>
 }
 
-export default Profile
+export default Leftbar

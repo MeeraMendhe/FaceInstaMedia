@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Profile = () => {
+const Rightbar = () => {
   return <div></div>
 }
 
-export default Profile
+export default Rightbar

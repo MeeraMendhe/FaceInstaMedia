@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Register.scss'
 
 const Register = () => {
@@ -22,7 +23,9 @@ const Register = () => {
             and videos, send messages and get updates.
           </p>
           <span>Don you have an account?</span>
-          <button>Login</button>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
         </div>
       </div>
     </div>

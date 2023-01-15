@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Login.scss'
 
 const Login = () => {
@@ -12,7 +13,9 @@ const Login = () => {
             and videos, send messages and get updates.
           </p>
           <span>Don't you have account?</span>
-          <button>Register</button>
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
         </div>
         <div className="right">
           <h1>Login</h1>
