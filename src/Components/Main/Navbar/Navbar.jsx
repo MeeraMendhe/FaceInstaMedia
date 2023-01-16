@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navbar.scss'
 import HomeIcon from '@mui/icons-material/Home'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
@@ -7,9 +7,13 @@ import EmailIcon from '@mui/icons-material/Email'
 import PersonIcon from '@mui/icons-material/Person'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import GridViewIcon from '@mui/icons-material/GridView'
-// import WbSunnyIcon from '@mui/icons-material/WbSunny'
+import WbSunnyIcon from '@mui/icons-material/WbSunny'
 import { Link } from '@mui/material'
+import { ThemeContext } from '../../../Context/ThemeContext'
+
 const Navbar = () => {
+  const { theme, toggle } = useContext(ThemeContext)
+
   return (
     <div className="navbar">
       <div className="left">
@@ -17,7 +21,11 @@ const Navbar = () => {
           <span style={{ textDecoration: 'none' }}>FaceInsta </span>
         </Link>
         <HomeIcon />
-        <DarkModeIcon />
+        {theme ? (
+          <WbSunnyIcon onClick={toggle} />
+        ) : (
+          <DarkModeIcon onClick={toggle} />
+        )}
         <GridViewIcon />
         <div className="search">
           <SearchIcon />

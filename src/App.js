@@ -11,12 +11,18 @@ import Leftbar from './Components/Main/Leftbar/Leftbar'
 import Rightbar from './Components/Main/Rightbar/Rightbar'
 import Home from './Components/Home/Home'
 import Profile from './Components/Profile/Profile'
+import './style.scss'
+import { useContext } from 'react'
+import { ThemeContext } from './Context/ThemeContext'
 
 function App() {
   let user = true
+
+  const { theme } = useContext(ThemeContext)
+
   const Layout = () => {
     return (
-      <div>
+      <div className={theme ? 'theme-dark' : 'theme-light'}>
         <Navbar />
         <div style={{ display: 'flex' }}>
           <Leftbar />
