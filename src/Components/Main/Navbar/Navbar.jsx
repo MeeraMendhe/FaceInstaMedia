@@ -10,9 +10,11 @@ import GridViewIcon from '@mui/icons-material/GridView'
 import WbSunnyIcon from '@mui/icons-material/WbSunny'
 import { Link } from '@mui/material'
 import { ThemeContext } from '../../../Context/ThemeContext'
+import { AuthContext } from '../../../Context/AuthContext'
 
 const Navbar = () => {
   const { theme, toggle } = useContext(ThemeContext)
+  const { currentUser } = useContext(AuthContext)
 
   return (
     <div className="navbar">
@@ -37,11 +39,8 @@ const Navbar = () => {
         <EmailIcon />
         <NotificationsIcon />
         <div className="user">
-          <img
-            src="https://media.istockphoto.com/id/1314920164/photo/low-angle-shot-of-a-diverse-group-of-businesspeople-joining-their-heads-together-in-a-huddle.jpg?s=612x612&w=0&k=20&c=nm2X1TzmK-os8W4UZoa9IdVmEYEgQVgjjzFnlfF7AIQ="
-            alt="profile pic of user"
-          />
-          <span>Meera Mendhe</span>
+          <img src={currentUser.profile} alt="profile pic of user" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

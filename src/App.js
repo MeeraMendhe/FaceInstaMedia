@@ -14,9 +14,10 @@ import Profile from './Components/Profile/Profile'
 import './style.scss'
 import { useContext } from 'react'
 import { ThemeContext } from './Context/ThemeContext'
+import { AuthContext } from './Context/AuthContext'
 
 function App() {
-  let user = true
+  let { currentUser } = useContext(AuthContext)
 
   const { theme } = useContext(ThemeContext)
 
@@ -36,7 +37,7 @@ function App() {
   }
 
   const PrivateRoute = ({ children }) => {
-    if (!user) {
+    if (!currentUser) {
       return <Navigate to="/login" />
     }
     return children

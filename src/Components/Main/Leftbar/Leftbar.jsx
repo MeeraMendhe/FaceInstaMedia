@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Friends from '../../../../src/Assets/1.png'
 import Group from '../../../../src/Assets/2.png'
 import Market from '../../../../src/Assets/3.png'
@@ -13,17 +13,17 @@ import Tutorials from '../../../../src/Assets/11.png'
 import Courses from '../../../../src/Assets/12.png'
 import Funds from '../../../../src/Assets/13.png'
 import './Leftbar.scss'
+import { AuthContext } from '../../../Context/AuthContext'
+
 const Leftbar = () => {
+  const { currentUser } = useContext(AuthContext)
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img
-              src="https://media.istockphoto.com/id/1314920164/photo/low-angle-shot-of-a-diverse-group-of-businesspeople-joining-their-heads-together-in-a-huddle.jpg?s=612x612&w=0&k=20&c=nm2X1TzmK-os8W4UZoa9IdVmEYEgQVgjjzFnlfF7AIQ="
-              alt="profile pic of user"
-            />
-            <span>Meera Mendhe</span>
+            <img src={currentUser.profile} alt="profile pic of user" />
+            <span>{currentUser.name}</span>
           </div>
           <div className="item">
             <img src={Friends} alt="" />
