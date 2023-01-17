@@ -14,11 +14,13 @@
     .container {
       padding: 20px;
       .item {
-        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-          rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
         padding: 20px;
         margin-bottom: 20px;
-        background-color: themed('bgSoft');
+        background-color: themed('bg');
+        border-radius: 20px;
         span {
           color: gray;
         }
